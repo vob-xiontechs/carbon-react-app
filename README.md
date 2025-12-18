@@ -41,6 +41,12 @@ docker run -p 80:80 carbon-react-app:latest
 ### Vercel
 You can also use Vercel (recommended). Import the repo, use `npm run build` and output directory `dist`.
 
+CI via GitHub Actions: this repo includes a `.github/workflows/deploy-vercel.yml` workflow that builds and deploys to Vercel on pushes to `main`.
+
+Requirements for automatic deploy:
+- Add `VERCEL_TOKEN` as a repository secret (Vercel personal token).
+- Optionally configure project via Vercel dashboard (organization/project) for additional settings.
+
 ## Notes
 - Avoid committing sensitive files (e.g., `.env*`) and large folders (`node_modules`).
 - The project uses Vite; SPA routing requires the redirect rule included in `netlify.toml`.
