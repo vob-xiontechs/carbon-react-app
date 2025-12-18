@@ -1,3 +1,49 @@
+# carbon-react-app
+
+React + Vite financial dashboard (local dev & deploy instructions)
+
+## Quick commands
+
+Install:
+```bash
+npm install
+```
+
+Run dev server:
+```bash
+npm run dev
+```
+
+Build production bundle:
+```bash
+npm run build
+```
+
+Serve `dist` locally:
+```bash
+npx serve dist
+```
+
+## Deploy
+
+### Netlify
+1. Connect your Git repository to Netlify.
+2. Set build command to `npm run build` and publish directory to `dist`.
+3. This repo includes `netlify.toml` for SPA redirect to `index.html`.
+
+### Docker
+Build image and run:
+```bash
+docker build -t carbon-react-app:latest .
+docker run -p 80:80 carbon-react-app:latest
+```
+
+### Vercel
+You can also use Vercel (recommended). Import the repo, use `npm run build` and output directory `dist`.
+
+## Notes
+- Avoid committing sensitive files (e.g., `.env*`) and large folders (`node_modules`).
+- The project uses Vite; SPA routing requires the redirect rule included in `netlify.toml`.
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
